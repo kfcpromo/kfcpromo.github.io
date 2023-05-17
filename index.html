@@ -101,11 +101,11 @@ fetch("/kfcdata.json?t="+new Date().getTime(), {
     s='<h5 class="text-center" style="margin-top:10px;">過濾選項</h5><div class="btn-group-toggle" data-toggle="buttons">'
     meal_data.forEach(function(it,ind){
         s=s+'<input type="checkbox" class="btn-check" id="ch_'+ind+'" onchange="changefilter('+ind+');" autocomplete="off">'
-        s=s+'<label class="btn btn-outline-primary" for="ch_'+ind+'" style="margin-top:4px;">'+it+'</label>&nbsp;'
+        s=s+'<label class="btn btn-outline-primary btn-sm" for="ch_'+ind+'" style="margin-top:4px;">'+it+'</label>&nbsp;'
         //s=s+'<label class="btn btn-outline-primary " style="margin-top:4px;">'
         //s=s+'<input type="checkbox" id="ch_'+ind+'" onchange="changefilter('+ind+');">'+it+'</label>&nbsp;';
     });
-    s=s+'</div><button type="button" class="btn btn-danger" onclick="clearfilter();" style="margin-top:15px;">全部清除所選</button>';
+    s=s+'</div><button type="button" class="btn btn-danger btn-sm" onclick="clearfilter();" style="margin-top:15px;">全部清除所選</button>';
     
     display_data=k_data;
     document.getElementById('check_group').innerHTML=s;
