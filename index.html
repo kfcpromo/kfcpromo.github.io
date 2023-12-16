@@ -98,7 +98,8 @@ fetch("/kfcdata.json?t="+new Date().getTime(), {
             });
         });
     });
-    s='<h5 class="text-center" style="margin-top:10px;">過濾選項</h5><div class="btn-group-toggle" data-toggle="buttons">'
+    meal_data.sort((a, b) => a.localeCompare(b));
+    s='<h5 class="text-center" style="margin-top:10px;">過濾選項</h5><div class="btn-group-toggle" data-toggle="buttons">';
     meal_data.forEach(function(it,ind){
         s=s+'<input type="checkbox" class="btn-check" id="ch_'+ind+'" onchange="changefilter('+ind+');" autocomplete="off">'
         s=s+'<label class="btn btn-outline-primary btn-sm" for="ch_'+ind+'" style="margin-top:4px;">'+it+'</label>&nbsp;'
