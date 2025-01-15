@@ -84,7 +84,7 @@ var display_data=[];
 var meal_data=[];
 var filter_data=[];
 
-fetch("/kfcdata.json?t="+new Date().getTime(), {
+fetch("/kfcdatanew.json?t="+new Date().getTime(), {
   "headers": {
     "accept": "application/json",
     "content-type": "application/json",
@@ -216,8 +216,8 @@ function show_changedialog(ind,mind){
     var s='<h5 class="text-center">'+code+'&nbsp;['+ori+'] 可更換：</h5><p class="text-center">'
     clist.forEach(function(it){
         s=s+it['Name'];
-	if(it['Price_New']!=0){
-	    s=s+'&nbsp;+'+it['Price_New']+'元';
+	if(it['AddPrice']!=0){
+	    s=s+'&nbsp;+'+it['AddPrice']+'元';
 	}
 	s=s+'<br>';
     });
