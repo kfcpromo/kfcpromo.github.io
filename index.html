@@ -191,7 +191,12 @@ function display(s_op){
         else s=s+'<div class="card bg-c-yellow order-card">';
         s=s+'<div class="card-block">';
         s=s+'<h4 class=""><i class="fa fa-cart-plus f-right" ></i><span>';
-        s=s+cap+'折&nbsp;'+it['price']+'元</span></h4>';
+	if(cap>=100){
+	    s=s+'--折&nbsp;'+it['price']+'元</span></h4>';
+	}
+	else{
+	    s=s+cap+'折&nbsp;'+it['price']+'元</span></h4>';
+	}
         s=s+'<h5 class=""><i class="fa fa-cart-plus f-right" ></i><span>'+it['code']+'</span></h5>';
         s=s+'<p class="m-b-0">';
         it['meal'].forEach(function(mit,mind){
@@ -202,6 +207,7 @@ function display(s_op){
             s=s+'<br>'
         });
         s=s+'</p>';
+	s=s+'<font style="font-size: 0.6em;">'+it['title']+'<br></font>';
         s=s+'<font style="font-size: 0.6em;">開始&nbsp;'+it['starttime']+'<br></font>';
         s=s+'<font style="font-size: 0.6em;">結束&nbsp;'+it['endtime']+'</font>';
         s=s+'</div></div></div>';
